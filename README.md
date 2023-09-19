@@ -1,0 +1,1 @@
+My goal with this is to focus on creating a functional rock paper scissors game. I will not be focused on css elements at this time.
