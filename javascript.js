@@ -1,5 +1,5 @@
-let playerWin;
-let computerWin;
+let playerWin = 0;
+let computerWin = 0;
 
 function getComputerChoice() {
     let computerChoice = Math.floor(Math.random() * 3) + 1;
@@ -16,7 +16,7 @@ function getComputerChoice() {
     }
 }
 
-function playRound(playerSelection, computerSelection) {
+const playRound = (playerSelection, computerSelection) => {
     playerSelection = prompt("Rock Paper or Scissors?").toLowerCase();
     computerSelection = getComputerChoice();
     if (computerSelection == "rock" && playerSelection == "paper") {
@@ -42,12 +42,10 @@ function playRound(playerSelection, computerSelection) {
     };
 }
 
-function playGame() {
-    playRound();
-    playRound();
-    playRound();
-    playRound();
-    playRound();
+let playGame = () => {
+    for (let i = 0; i < 5; i++) {
+        playRound();
+    }
     if (playerWin > computerWin) {
         alert('You won best out of 5!');
     } else if (computerWin > playerWin) {
