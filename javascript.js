@@ -19,29 +19,39 @@ const getComputerChoice= () => {
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
+const alertBelow = document.querySelector('#alert');
+const playerWinDisplay = document.querySelector('#playerWinDisplay')
+const computerWinDisplay = document.querySelector('#computerWinDisplay')
+
 
 const playRound = (playerSelection, computerSelection) => {
     computerSelection = getComputerChoice();
     if (computerSelection == "rock" && playerSelection == "paper") {
-        alert("You win! Paper beats Rock");
+        alertBelow.textContent = "You win! Paper beats Rock";
+        playerWinDisplay.textContent = `${playerWin}`;
         return ++playerWin;
     } else if (computerSelection == "rock" && playerSelection == "scissors") {
-        alert("You lose! Rock beats Scissors");
+        alertBelow.textContent = "You lose! Rock beats Scissors";
+        computerWinDisplay.textContent = `${computerWin}`;
         return ++computerWin;
     } else if (computerSelection == "paper" && playerSelection == "rock") {
-        alert("You lose! Paper beats Rock");
+        alertBelow.textContent = "You lose! Paper beats Rock";
+        computerWinDisplay.textContent = `${computerWin}`;
         return ++computerWin;
     } else if (computerSelection == "paper" && playerSelection == "scissors") {
-        alert("You win! Scissors beat Paper");
+        alertBelow.textContent = "You win! Scissors beat Paper";
+        playerWinDisplay.textContent = `${playerWin}`;
         return ++playerWin;
     } else if (computerSelection == "scissors" && playerSelection == "rock") {
-        alert("You win! Rock beats Scissors");
+        alertBelow.textContent = "You win! Rock beats Scissors";
+        playerWinDisplay.textContent = `${playerWin}`;
         return ++playerWin;
     } else if (computerSelection == "scissors" && playerSelection == "paper") {
-        alert("You lose! Scissors beat Paper");
+        alertBelow.textContent = "You lose! Scissors beat Paper";
+        computerWinDisplay.textContent = `${computerWin}`;
         return ++computerWin;
     } else {
-        alert('Tie!')
+        alertBelow.textContent = 'Tie!';
     };
 }
 
@@ -56,7 +66,6 @@ paper.addEventListener('click', function() {
 scissors.addEventListener('click', function() {
     playRound('scissors', );
 });
-
 
 
 
