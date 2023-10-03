@@ -1,7 +1,7 @@
 let playerWin = 0;
 let computerWin = 0;
 
-function getComputerChoice() {
+const getComputerChoice= () => {
     let computerChoice = Math.floor(Math.random() * 3) + 1;
     switch(computerChoice) {
         case 1:
@@ -16,8 +16,11 @@ function getComputerChoice() {
     }
 }
 
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
+
 const playRound = (playerSelection, computerSelection) => {
-    playerSelection = prompt("Rock Paper or Scissors?").toLowerCase();
     computerSelection = getComputerChoice();
     if (computerSelection == "rock" && playerSelection == "paper") {
         alert("You win! Paper beats Rock");
@@ -42,6 +45,23 @@ const playRound = (playerSelection, computerSelection) => {
     };
 }
 
+rock.addEventListener('click', function() {
+    playRound('rock', );
+});
+
+paper.addEventListener('click', function() {
+    playRound('paper', );
+});
+
+scissors.addEventListener('click', function() {
+    playRound('scissors', );
+});
+
+
+
+
+
+/* Old play game loop
 let playGame = () => {
     for (let i = 0; i < 5; i++) {
         playRound();
@@ -54,3 +74,4 @@ let playGame = () => {
         alert('Tie game out of 5')
     }
 }
+*/
